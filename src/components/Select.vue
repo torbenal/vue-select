@@ -664,6 +664,7 @@
           if (this.multiple) {
             option = this.selectedValue.concat(option)
           }
+          console.log('select')
           this.updateValue(option);
         }
         this.onAfterSelect(option)
