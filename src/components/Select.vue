@@ -735,6 +735,7 @@
        * @return {void}
        */
       toggleDropdown (event, check=true) {
+        console.log('PLEASE')
         const targetIsNotSearch = check? event.target !== this.$refs.search: true;
         if (check && targetIsNotSearch) {
           event.preventDefault();
