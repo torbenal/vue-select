@@ -734,8 +734,8 @@
        * @param  {Event} event
        * @return {void}
        */
-      toggleDropdown (event, checkIgnored=true) {
-        const targetIsNotSearch = event.target !== this.$refs.search;
+      toggleDropdown (event, check=true) {
+        const targetIsNotSearch = check? event.target !== this.$refs.search: true;
         if (targetIsNotSearch) {
           event.preventDefault();
         }
@@ -747,7 +747,7 @@
           ...([this.$refs['clearButton']] || []),
         ];
 
-        if (checkIgnored && ignoredButtons.some(ref => ref.contains(event.target) || ref === event.target)) {
+        if (check && ignoredButtons.some(ref => ref.contains(event.target) || ref === event.target)) {
           event.preventDefault();
           return;
         }
